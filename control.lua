@@ -3,6 +3,7 @@
 script.on_event(defines.events.on_player_changed_position,
     function(event)
         local player = game.get_player(event.player_index) -- get the player that moved
+        assert(player, "Player is nil")
         -- if they're currently controlling the character
         if player.controller_type == defines.controllers.character then
             -- and wearing our armor
